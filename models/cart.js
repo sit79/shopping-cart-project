@@ -8,7 +8,7 @@ class ShoppingCart {
     if (this.items.hasOwnProperty(id)) {
       this.items.id.quantity++
     } else {
-      this.items.id = { product, quantity: 1 }
+      this.items[id] = { productDetails: { product }, quantity: 1 }
     }
   }
 }
