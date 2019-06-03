@@ -4,7 +4,7 @@ const Product = require("../models/product")
 
 /* GET home page. */
 router.get("/", function(req, res) {
-  res.json({ response: "Welcome to this API" })
+  res.json({ response: "Welcome to this shopping thingy!" })
 })
 
 router.get("/all", async (req, res) => {
