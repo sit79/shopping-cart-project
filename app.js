@@ -6,7 +6,7 @@ const logger = require("morgan")
 const mongoose = require("mongoose")
 const chalk = require("chalk")
 
-const apiRouter = require("./routes/api")
+const indexRouter = require("./routes/index")
 
 const app = express()
 const mongoUrl = "mongodb://localhost:27017/shop"
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
 
-app.use("/", apiRouter)
+app.use("/", indexRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
