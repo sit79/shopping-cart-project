@@ -48,11 +48,11 @@ class ShoppingCart {
     const { _id: id } = product
     const item = this.items[id]
     if (this.items.hasOwnProperty(id)) {
-      console.log(chalk.blue(`${id} added`))
+      console.log(chalk.green(`${id} ++`))
       item.quantity++
       item.price = item.quantity * item.productDetails.price
     } else {
-      console.log(chalk.green(`${id} created `))
+      console.log(chalk.blue(`${id} added `))
       this.items[id] = {
         productDetails: product,
         quantity: 1,
@@ -68,7 +68,7 @@ class ShoppingCart {
       if (item.quantity > 1) {
         item.quantity--
         item.price = item.quantity * item.productDetails.price
-        console.log(chalk.red(`${id} removed`))
+        console.log(chalk.red(`${id} --`))
       } else {
         delete this.items[id]
         console.log(chalk.red(`${id} deleted`))
@@ -89,8 +89,7 @@ cart.add(items[1])
 cart.add(items[2])
 cart.add(items[2])
 cart.add(items[2])
-cart.remove(items[2])
-cart.remove(items[2])
+cart.add(items[3])
 cart.remove(items[2])
 console.log("\n*********** RESULTING CART **************\n")
 console.log(cart)
