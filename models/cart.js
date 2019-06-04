@@ -8,11 +8,11 @@ class ShoppingCart {
     const { _id: id } = product
     const item = this.items[id]
     if (this.items.hasOwnProperty(id)) {
-      console.log(chalk.green(`${id} ++`))
+      // console.log(chalk.green(`${id} ++`))
       item.quantity++
       item.price = item.quantity * item.productDetails.price
     } else {
-      console.log(chalk.blue(`${id} added `))
+      // console.log(chalk.blue(`${id} added `))
       this.items[id] = {
         productDetails: product,
         quantity: 1,
@@ -28,13 +28,13 @@ class ShoppingCart {
       if (item.quantity > 1) {
         item.quantity--
         item.price = item.quantity * item.productDetails.price
-        console.log(chalk.red(`${id} --`))
+        // console.log(chalk.red(`${id} --`))
       } else {
         delete this.items[id]
-        console.log(chalk.red(`${id} deleted`))
+        // console.log(chalk.red(`${id} deleted`))
       }
     } else {
-      console.log(chalk.blue(`${id} not in cart`))
+      // console.log(chalk.blue(`${id} not in cart`))
     }
   }
 
@@ -42,9 +42,9 @@ class ShoppingCart {
     const { _id: id } = product
     if (this.items.hasOwnProperty(id)) {
       delete this.items[id]
-      console.log(chalk.red(`${id} deleted`))
+      // console.log(chalk.red(`${id} deleted`))
     } else {
-      console.log(chalk.blue(`${id} not in cart`))
+      // console.log(chalk.blue(`${id} not in cart`))
     }
   }
 
