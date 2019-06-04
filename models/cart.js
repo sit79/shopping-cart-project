@@ -88,7 +88,7 @@ class ShoppingCart {
     }
   }
 
-  _isEmpty(obj) {
+  isEmpty(obj = this.items) {
     for (let key in obj) {
       if (obj.hasOwnProperty(key)) return false
     }
@@ -110,7 +110,7 @@ class ShoppingCart {
 
   get totalPrc() {
     const items = this.items
-    if (!this._isEmpty(items)) {
+    if (!this.isEmpty()) {
       // count and return total price
       let totalPrice = 0
       for (let key in items) {
