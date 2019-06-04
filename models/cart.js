@@ -80,6 +80,9 @@ class ShoppingCart {
 }
 
 const cart = new ShoppingCart()
+
+// Playground
+
 console.clear()
 console.log(cart)
 console.log("\n*********** OPERATIONS ******************\n")
