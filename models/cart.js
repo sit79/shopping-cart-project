@@ -77,6 +77,10 @@ class ShoppingCart {
       console.log(chalk.blue(`${id} is not in cart`))
     }
   }
+
+  removeAll() {
+    // TODO
+  }
 }
 
 const cart = new ShoppingCart()
