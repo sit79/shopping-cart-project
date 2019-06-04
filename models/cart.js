@@ -108,6 +108,10 @@ class ShoppingCart {
       return 0
     }
   }
+
+  get totalPrice() {
+    // TODO
+  }
 }
 
 const cart = new ShoppingCart()
