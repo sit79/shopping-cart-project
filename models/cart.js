@@ -74,7 +74,7 @@ class ShoppingCart {
         console.log(chalk.red(`${id} deleted`))
       }
     } else {
-      console.log(chalk.blue(`${id} is not in cart`))
+      console.log(chalk.blue(`${id} not in cart`))
     }
   }
 
@@ -84,7 +84,7 @@ class ShoppingCart {
       delete this.items[id]
       console.log(chalk.red(`${id} deleted`))
     } else {
-      console.log(chalk.red(`${id} not in cart`))
+      console.log(chalk.blue(`${id} not in cart`))
     }
   }
 }
