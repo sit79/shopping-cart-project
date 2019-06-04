@@ -98,19 +98,28 @@ class ShoppingCart {
   get totalQty() {
     const items = this.items
     if (!this._isEmpty(items)) {
-      // count and return total quantity
-      let sum = 0
+      let totalQuantity = 0
       for (let key in items) {
-        sum += items[key].quantity
+        totalQuantity += items[key].quantity
       }
-      return sum
+      return totalQuantity
     } else {
       return 0
     }
   }
 
-  get totalPrice() {
-    // TODO
+  get totalPrc() {
+    const items = this.items
+    if (!this._isEmpty(items)) {
+      // count and return total price
+      let totalPrice = 0
+      for (let key in items) {
+        totalPrice += items[key].price
+      }
+      return totalPrice
+    } else {
+      return 0
+    }
   }
 }
 
@@ -127,16 +136,16 @@ console.log(cart)
 console.log("\n*********** OPERATIONS ******************\n")
 
 cart.add(items[0])
-cart.add(items[0])
-cart.add(items[0])
 cart.add(items[1])
 cart.add(items[2])
-cart.add(items[3])
-cart.remove(items[0])
-cart.remove(items[0])
-cart.remove(items[0])
-cart.removeAll(items[1])
-cart.removeAll(items[2])
+// cart.add(items[1])
+// cart.add(items[2])
+// cart.add(items[3])
+// cart.remove(items[0])
+// cart.remove(items[0])
+// cart.remove(items[0])
+// cart.removeAll(items[1])
+// cart.removeAll(items[2])
 
 console.log("\n*********** RESULTING CART **************\n")
 
@@ -144,7 +153,7 @@ console.log(cart)
 
 console.log("\n*********** TEST ************************\n")
 
-console.log(cart.totalQty)
+console.log(cart.totalPrc)
 
 console.log("\n*********** END *************************\n")
 
