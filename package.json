@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "lint": "eslint --fix ."
+    "start": "nodemon ./bin/www",
+    "lint": "eslint --fix .",
+    "cart": "nodemon ./models/cart"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
+    "express-session": "^1.16.1",
     "faker": "^4.1.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "mongoose": "^5.5.12",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "nodemon": "^1.19.1"
   }
 }

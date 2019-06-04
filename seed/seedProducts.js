@@ -26,8 +26,7 @@ while (count) {
   count--
 }
 
-Product.insertMany(products, (err, data) => {
-  console.log(data)
+Product.insertMany(products, err => {
   if (err) return console.error(err)
   mongoose.connection.close()
   console.log(chalk.green("DB connection closed."))
