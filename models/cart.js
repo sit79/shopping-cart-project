@@ -123,8 +123,7 @@ class ShoppingCart {
   }
 }
 
-const cart = new ShoppingCart()
-module.exports = cart
+module.exports = ShoppingCart
 
 // Playground
 
