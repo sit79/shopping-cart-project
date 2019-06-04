@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 const session = require("express-session")
 const chalk = require("chalk")
 
-const indexRouter = require("./routes/index")
+const shopRouter = require("./routes/shop")
 
 const app = express()
 const mongoUrl = "mongodb://localhost:27017/shop"
@@ -31,7 +31,7 @@ app.use(
   })
 )
 
-app.use("/", indexRouter)
+app.use("/", shopRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

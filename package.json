@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "lint": "eslint --fix .",
-    "cart": "nodemon ./models/cart"
+    "cart": "nodemon ./models/cart",
+    "test": "jest"
   },
   "dependencies": {
     "chalk": "^2.4.2",

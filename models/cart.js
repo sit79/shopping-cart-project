@@ -124,20 +124,17 @@ class ShoppingCart {
 }
 
 const cart = new ShoppingCart()
+module.exports = cart
 
 // Playground
 
-console.clear()
-
-console.log("\n*********** CART AT START ***************\n")
-
-console.log(cart)
-
-console.log("\n*********** OPERATIONS ******************\n")
-
-cart.add(items[0])
-cart.add(items[1])
-cart.add(items[2])
+// console.clear()
+// console.log("\n*********** CART AT START ***************\n")
+// console.log(cart)
+// console.log("\n*********** OPERATIONS ******************\n")
+// cart.add(items[0])
+// cart.add(items[1])
+// cart.add(items[2])
 // cart.add(items[1])
 // cart.add(items[2])
 // cart.add(items[3])
@@ -146,16 +143,11 @@ cart.add(items[2])
 // cart.remove(items[0])
 // cart.removeAll(items[1])
 // cart.removeAll(items[2])
-
-console.log("\n*********** RESULTING CART **************\n")
-
-console.log(cart)
-
-console.log("\n*********** TEST ************************\n")
-
-console.log(cart.totalPrc)
-
-console.log("\n*********** END *************************\n")
+// console.log("\n*********** RESULTING CART **************\n")
+// console.log(cart)
+// console.log("\n*********** TEST ************************\n")
+// console.log(cart.totalPrc)
+// console.log("\n*********** END *************************\n")
 
 // const SHOPPING-CART-EXAMPLE = {
 //   "5cf5021a2df6635d380b9410": {
