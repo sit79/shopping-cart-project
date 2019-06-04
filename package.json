@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "NODE_ENV=development nodemon ./bin/www",
     "lint": "eslint --fix .",
-    "cart": "nodemon ./models/cart",
-    "test": "jest"
+    "cart": "NODE_ENV=test nodemon ./tests/cart.manual",
+    "test": "NODE_ENV=test jest --runInBand"
   },
   "dependencies": {
     "chalk": "^2.4.2",
