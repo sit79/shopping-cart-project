@@ -1,4 +1,5 @@
 const shoppingCart = require("../models/cart")
+const chalk = require("chalk")
 
 const items = [
   {
@@ -59,43 +60,44 @@ cart.removeAll(items[2])
 console.log("\n*********** RESULTING CART **************\n")
 console.log(cart)
 console.log("\n*********** TEST ************************\n")
-console.log(cart.totalPrc)
+console.log(chalk.yellow("Number of items: ") + chalk.white(cart.totalQty))
+console.log(chalk.yellow("Total: ") + chalk.white(`$${cart.totalPrc}`))
 console.log("\n*********** END *************************\n")
 
-// const SHOPPING-CART-EXAMPLE = {
-//   "5cf5021a2df6635d380b9410": {
-//     productDetails: {
-//       _id: "5cf5021a2df6635d380b9410",
-//       name: "Handmade Fresh Chicken",
-//       description:
-//         "A qui qui odit doloremque et quasi totam et. Assumenda ab id est odio. Omnis laborum voluptatem.",
-//       imgUrl: "http://lorempixel.com/640/480",
-//       price: 808,
-//       __v: 0
-//     },
-//     quantity: 1
-//   },
-//   "5cf5021a2df6635d380b9411": {
-//     productDetails: {
-//       _id: "5cf5021a2df6635d380b9411",
-//       name: "Small Granite Mouse",
-//       description:
-//         "Non ullam numquam eveniet quae et nihil nobis soluta. Porro debitis et nihil. Iure sed itaque et est cupiditate.",
-//       imgUrl: "http://lorempixel.com/640/480",
-//       price: 236,
-//       __v: 0
-//     },
-//     quantity: 1
-//   },
-//   "5cf5021a2df6635d380b9412": {
-//     productDetails: {
-//       _id: "5cf5021a2df6635d380b9412",
-//       name: "Gorgeous Granite Shoes",
-//       description:
-//         "Cumque cum libero quas est ex accusantium reiciendis maiores omnis. Voluptatibus error quaerat aliquam reprehenderit accusantium corrupti sed. At nisi delectus quae quia quis eum.",
-//       imgUrl: "http://lorempixel.com/640/480",
-//       price: 389,
-//       __v: 0
-//     }
-//   }
-// }
+const SHOPPING_CART_EXAMPLE = {
+  "5cf5021a2df6635d380b9410": {
+    productDetails: {
+      _id: "5cf5021a2df6635d380b9410",
+      name: "Handmade Fresh Chicken",
+      description:
+        "A qui qui odit doloremque et quasi totam et. Assumenda ab id est odio. Omnis laborum voluptatem.",
+      imgUrl: "http://lorempixel.com/640/480",
+      price: 808,
+      __v: 0
+    },
+    quantity: 1
+  },
+  "5cf5021a2df6635d380b9411": {
+    productDetails: {
+      _id: "5cf5021a2df6635d380b9411",
+      name: "Small Granite Mouse",
+      description:
+        "Non ullam numquam eveniet quae et nihil nobis soluta. Porro debitis et nihil. Iure sed itaque et est cupiditate.",
+      imgUrl: "http://lorempixel.com/640/480",
+      price: 236,
+      __v: 0
+    },
+    quantity: 1
+  },
+  "5cf5021a2df6635d380b9412": {
+    productDetails: {
+      _id: "5cf5021a2df6635d380b9412",
+      name: "Gorgeous Granite Shoes",
+      description:
+        "Cumque cum libero quas est ex accusantium reiciendis maiores omnis. Voluptatibus error quaerat aliquam reprehenderit accusantium corrupti sed. At nisi delectus quae quia quis eum.",
+      imgUrl: "http://lorempixel.com/640/480",
+      price: 389,
+      __v: 0
+    }
+  }
+}

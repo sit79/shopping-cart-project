@@ -57,7 +57,7 @@ class ShoppingCart {
 
   get totalQty() {
     const items = this.items
-    if (!this._isEmpty(items)) {
+    if (!this.isEmpty()) {
       let totalQuantity = 0
       for (let key in items) {
         totalQuantity += items[key].quantity
