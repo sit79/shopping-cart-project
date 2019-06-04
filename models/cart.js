@@ -78,8 +78,14 @@ class ShoppingCart {
     }
   }
 
-  removeAll() {
-    // TODO
+  removeAll(product) {
+    const { _id: id } = product
+    if (this.items.hasOwnProperty(id)) {
+      delete this.items[id]
+      console.log(chalk.red(`${id} deleted`))
+    } else {
+      console.log(chalk.red(`${id} not in cart`))
+    }
   }
 }
 
@@ -91,13 +97,13 @@ console.clear()
 console.log(cart)
 console.log("\n*********** OPERATIONS ******************\n")
 cart.add(items[0])
-cart.add(items[1])
-cart.add(items[1])
-cart.add(items[2])
-cart.add(items[2])
-cart.add(items[2])
-cart.add(items[3])
-cart.remove(items[2])
+cart.add(items[0])
+cart.add(items[0])
+cart.remove(items[0])
+cart.remove(items[0])
+cart.remove(items[0])
+cart.removeAll(items[1])
+// cart.removeAll(items[2])
 console.log("\n*********** RESULTING CART **************\n")
 console.log(cart)
 console.log("\n*********** END *************************\n")
