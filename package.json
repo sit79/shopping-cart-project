@@ -7,7 +7,8 @@
     "lint": "eslint --fix .",
     "cart": "NODE_ENV=test nodemon ./tests/cart.manual",
     "test": "NODE_ENV=test jest -i",
-    "test-dev": "NODE_ENV=test jest -i --watchAll"
+    "test-dev": "NODE_ENV=test jest -i --watchAll",
+    "seed": "node ./seed/seedProducts "
   },
   "dependencies": {
     "chalk": "^2.4.2",
