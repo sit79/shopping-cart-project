@@ -15,9 +15,14 @@ const shopRoutes = {
   getProductById: "/shop/:id"
 }
 
+// Show all endpoints at home route (/)
+shopRouter.get("/", (req, res) => {
+  res.json({ availableRoutes: shopRoutes })
+})
+
 // GET
 shopRouter.get(shopRoutes.homepage, welcomeToShop)
 shopRouter.get(shopRoutes.getAllProducts, getAllProducts)
 shopRouter.get(shopRoutes.getProductById, getProductById)
 
-module.exports = shopRouter
+module.exports = { shopRouter, shopRoutes }

@@ -6,7 +6,7 @@ const mongoose = require("mongoose")
 const session = require("express-session")
 const chalk = require("chalk")
 
-const shopRouter = require("./routes/shop")
+const { shopRouter } = require("./routes/shop")
 
 const app = express()
 const mongoUrl = "mongodb://localhost:27017/shop"
