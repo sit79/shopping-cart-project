@@ -1,5 +1,6 @@
-const chalk = require("chalk")
-class ShoppingCart {
+// const chalk = require("chalk")
+
+module.exports = class ShoppingCart {
   constructor() {
     this.items = {}
   }
@@ -82,5 +83,3 @@ class ShoppingCart {
     }
   }
 }
-
-module.exports = ShoppingCart

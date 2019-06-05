@@ -25,4 +25,4 @@ shopRouter.get(shopRoutes.homepage, welcomeToShop)
 shopRouter.get(shopRoutes.getAllProducts, getAllProducts)
 shopRouter.get(shopRoutes.getProductById, getProductById)
 
-module.exports = { shopRouter, shopRoutes }
+module.exports = shopRouter
