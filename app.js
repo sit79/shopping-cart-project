@@ -27,7 +27,7 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 86400000 }
+    cookie: { maxAge: 86400000 },
   })
 )
 
@@ -47,12 +47,13 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500)
   res.render("error")
+  next()
 })
 
 // mongoose connection
 mongoose
   .connect(mongoUrl, {
-    useNewUrlParser: true
+    useNewUrlParser: true,
   })
   .then(() => {
     console.log(chalk.green("CONNECTED TO MONGO"))

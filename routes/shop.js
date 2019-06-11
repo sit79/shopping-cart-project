@@ -5,14 +5,14 @@ const shopRouter = express.Router({ strict: true })
 const {
   getAllProducts,
   welcomeToShop,
-  getProductById
+  getProductById,
 } = require("../controller/shop")
 
 // Route Configuration
 const shopRoutes = {
   homepage: "/shop",
   getAllProducts: "/shop/all",
-  getProductById: "/shop/:id"
+  getProductById: "/shop/:id",
 }
 
 // Show all endpoints at home route (/)

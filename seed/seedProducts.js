@@ -20,7 +20,7 @@ while (count) {
     name: faker.commerce.productName(),
     description: faker.lorem.paragraph(),
     imgUrl: faker.image.imageUrl(),
-    price: faker.commerce.price()
+    price: faker.commerce.price(),
   })
 
   count--

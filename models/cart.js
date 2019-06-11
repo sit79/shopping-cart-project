@@ -17,7 +17,7 @@ module.exports = class ShoppingCart {
       this.items[id] = {
         productDetails: product,
         quantity: 1,
-        price: product.price
+        price: product.price,
       }
     }
   }

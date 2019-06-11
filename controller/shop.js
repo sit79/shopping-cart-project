@@ -16,11 +16,11 @@ module.exports = {
     const { id } = req.params
     try {
       const product = await Product.find({
-        _id: id
+        _id: id,
       })
       res.status(200).send(product)
     } catch (error) {
       res.status(500).send(error)
     }
-  }
+  },
 }
