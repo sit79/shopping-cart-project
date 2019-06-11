@@ -1,6 +1,8 @@
 const shoppingCart = require("../models/cart")
 
-exports.initCart = (req, res, next) => {
-  req.sessions.cart = new shoppingCart(req.sessions.cart)
+const initCart = (req, res, next) => {
+  req.session.cart = new shoppingCart(req.session.cart)
   next()
 }
+
+module.exports = { initCart }

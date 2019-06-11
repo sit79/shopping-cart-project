@@ -41,16 +41,16 @@ const items = [
 
 describe("Testing the shopping cart", () => {
   test("Creating a new, empty shopping cart", () => {
-    const cart = new shoppingCart()
+    let cart = new shoppingCart()
     expect(cart).toEqual(
-      (shoppingCart = {
+      (cart = {
         items: {},
       })
     )
   })
 
   test("Add and remove items from a new cart", () => {
-    const cart = new shoppingCart()
+    let cart = new shoppingCart()
     cart.add(items[0])
     cart.add(items[0])
     cart.add(items[0])
@@ -59,7 +59,7 @@ describe("Testing the shopping cart", () => {
   })
 
   test("Remove all items from a cart", () => {
-    const cart = new shoppingCart()
+    let cart = new shoppingCart()
     cart.add(items[0])
     cart.add(items[0])
     cart.add(items[0])

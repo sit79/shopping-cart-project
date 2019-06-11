@@ -4,13 +4,17 @@ const path = require("path")
 const logger = require("morgan")
 const mongoose = require("mongoose")
 const session = require("express-session")
+const MongoStore = require("connect-mongo")(session)
+
 const chalk = require("chalk")
 
 const shopRouter = require("./routes/shop")
+const cartRouter = require("./routes/cart")
+const { initCart } = require("./middleware/init-session")
 
 const app = express()
 const mongoUrl = "mongodb://localhost:27017/shop"
-
+const connection = mongoose.connection
 // view engine setup
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "hbs")
@@ -28,14 +32,19 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 86400000 },
+    store: new MongoStore({ mongooseConnection: connection }),
   })
 )
+app.use(initCart)
 
+//  routes
 app.use("/", shopRouter)
+app.use("/cart", cartRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404))
+  console.log("error")
+  return next(createError(404))
 })
 
 // error handler
