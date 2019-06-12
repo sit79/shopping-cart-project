@@ -1,7 +1,8 @@
-const chalk = require("chalk")
-class ShoppingCart {
-  constructor() {
-    this.items = {}
+// const chalk = require("chalk")
+
+module.exports = class ShoppingCart {
+  constructor(cart = { items: {} }) {
+    this.items = cart.items
   }
 
   add(product) {
@@ -16,7 +17,7 @@ class ShoppingCart {
       this.items[id] = {
         productDetails: product,
         quantity: 1,
-        price: product.price
+        price: product.price,
       }
     }
   }
@@ -82,5 +83,3 @@ class ShoppingCart {
     }
   }
 }
-
-module.exports = ShoppingCart

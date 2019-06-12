@@ -1,11 +1,10 @@
 const Product = require("../models/product")
-const mongoose = require("mongoose")
 
 module.exports = {
-  welcomeToShop: (req, res, next) => {
+  welcomeToShop: (req, res) => {
     res.json({ response: "Welcome to this shopping thingy!" })
   },
-  getAllProducts: async (req, res, next) => {
+  getAllProducts: async (req, res) => {
     try {
       const allProducts = await Product.find({})
       res.status(200).send(allProducts)
@@ -13,15 +12,15 @@ module.exports = {
       res.send(error)
     }
   },
-  getProductById: async (req, res, next) => {
+  getProductById: async (req, res) => {
     const { id } = req.params
     try {
       const product = await Product.find({
-        _id: id
+        _id: id,
       })
       res.status(200).send(product)
     } catch (error) {
-      next(error)
+      res.status(500).send(error)
     }
-  }
+  },
 }
